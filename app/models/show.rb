@@ -24,4 +24,9 @@ class Show < ActiveRecord::Base
     Show.find_by_sql("SELECT * FROM shows WHERE rating > 5")
   end
 
+  def self.shows_by_alphabetical_order
+    Show.find_by_sql("SELECT * FROM shows ORDER BY name")
+
+  end 
+
 end
