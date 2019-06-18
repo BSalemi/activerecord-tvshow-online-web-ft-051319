@@ -27,6 +27,6 @@ class Show < ActiveRecord::Base
   def self.shows_by_alphabetical_order
     Show.find_by_sql("SELECT * FROM shows ORDER BY name")
 
-  end 
+  end
 
 end
