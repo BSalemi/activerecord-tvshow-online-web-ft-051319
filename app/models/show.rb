@@ -21,7 +21,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.popular_shows
-    Show.connection.select_all("SELECT * FROM shows WHERE rating > 5")
+    Show.find_by_sql("SELECT * FROM shows WHERE rating > 5")
   end
 
 end
