@@ -11,4 +11,7 @@ class Show < ActiveRecord::Base
   def self.lowest_rating
     Show.minimum(:rating)
   end
+
+  def self.least_popular_show
+    Show.find_by_sql("SELECT * FROM shows ORDER BY rating ASC LIMIT 1")[0]
 end
