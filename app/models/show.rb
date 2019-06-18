@@ -5,6 +5,6 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    Show.find_by_sql("SELECT * FROM shows ORDER BY rating DESC LIMIT 1")
+    Show.find_by_sql("SELECT * FROM shows ORDER BY rating DESC LIMIT 1")[0]
   end
 end
